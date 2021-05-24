@@ -1,11 +1,12 @@
-class TaskModel(){
-    constructor(title, id){
+import { generateId } from "../Utils/GenerateId.js"
+
+export default class TaskModel {
+    constructor(title, id) {
         this.title = title
-        this.id = id
+        this.id = generateId()
         this.complete = false
-    }
-    toggleTask(){
-        this.complete = !this.complete
+
 
     }
 }
+
