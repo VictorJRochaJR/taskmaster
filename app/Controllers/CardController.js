@@ -1,6 +1,8 @@
 import { cardService } from "../Services/CardService.js"
 import { ProxyState } from "../AppState.js"
 import { cardView } from "../Views/View.js"
+// import { loadState } from "../Utils/LocalStorage.js"
+
 
 export default class CardController {
     constructor() {
@@ -21,7 +23,9 @@ export default class CardController {
             cardView.renderCards(cardService.getCards())
         }, card.form)
 
+
         cardView.renderCards(cardService.getCards())
+        loadState()
     }
     deleteCard(id) {
         const card = cardService.deleteCard(id)
